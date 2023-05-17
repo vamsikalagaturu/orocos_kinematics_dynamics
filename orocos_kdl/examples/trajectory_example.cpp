@@ -41,8 +41,8 @@ int main(int argc,char* argv[]) {
 		// With an angle > PI, the routine will rotate over 2*PI-angle.
 		// If you need to rotate over a larger angle, you need to introduce intermediate points.
 		// So, there is a common use case for using parallel segments.
-		path->Add(Frame(Rotation::RPY(PI,0,0), Vector(-1,0,0)));
-		path->Add(Frame(Rotation::RPY(PI_2,0,0), Vector(-0.5,0,0)));
+		path->Add(Frame(Rotation::RPY(KDL::PI,0,0), Vector(-1,0,0)));
+		path->Add(Frame(Rotation::RPY(KDL::PI_2,0,0), Vector(-0.5,0,0)));
 		path->Add(Frame(Rotation::RPY(0,0,0), Vector(0,0,0)));
 		path->Add(Frame(Rotation::RPY(0.7,0.7,0.7), Vector(1,1,1)));
 		path->Add(Frame(Rotation::RPY(0,0.7,0), Vector(1.5,0.3,0)));
