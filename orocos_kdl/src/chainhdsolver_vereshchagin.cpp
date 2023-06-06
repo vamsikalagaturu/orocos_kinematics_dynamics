@@ -371,7 +371,7 @@ void ChainHdSolver_Vereshchagin::getContraintForceMagnitude(Eigen::VectorXd &nu_
     nu_ = nu;
 }
 
-/*
+
 void ChainHdSolver_Vereshchagin::getLinkCartesianPose(Frames& x_base)
 {
     for (int i = 0; i < ns; i++)
@@ -449,6 +449,8 @@ void ChainHdSolver_Vereshchagin::getJointBiasAcceleration(JntArray& bias_q_dotdo
 
 }
 
+/*
+
 void ChainHdSolver_Vereshchagin::getJointConstraintAcceleration(JntArray& constraint_q_dotdot)
 {
     for (int i = 0; i < ns; i++)
@@ -483,6 +485,8 @@ void ChainHdSolver_Vereshchagin::getJointNullSpaceAcceleration(JntArray& nullspa
 
 }
 
+*/
+
 //This is not only a bias force energy but also includes generalized forces
 //change type of parameter G
 //this method should return array of G's
@@ -515,7 +519,5 @@ void ChainHdSolver_Vereshchagin::getLinkBiasForceMatrix(Wrenches& R_tilde)
     }
     return;
 }
-
-*/
 
 }//namespace

@@ -416,7 +416,7 @@ public:
     // Returns magnitude of the constraint forces acting on the end-effector: Lagrange Multiplier
     void getContraintForceMagnitude(Eigen::VectorXd &nu_);
 
-    /*
+    
     //Returns cartesian positions of links in base coordinates
     void getLinkCartesianPose(Frames& x_base);
     //Returns cartesian velocities of links in base coordinates
@@ -439,7 +439,7 @@ public:
     void getLinkBiasForceMatrix(Wrenches& R_tilde);
 
     void getJointBiasAcceleration(JntArray &bias_q_dotdot);
-    */
+    
 private:
     /**
      *  This method calculates all cartesian space poses, twists, bias accelerations.
