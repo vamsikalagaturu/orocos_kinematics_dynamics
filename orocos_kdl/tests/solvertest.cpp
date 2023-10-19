@@ -220,6 +220,11 @@ void SolverTest::setUp()
 	kukaLWR.addSegment(Segment(Joint(Joint::RotZ, scale, offset, 0.394, damping, stiffness),
 				               Frame::Identity(),
 				               RigidBodyInertia(2, Vector::Zero(), RotationalInertia(0.000001,0.0,0.0001203,0.0,0.0,0.0))));
+
+    // set joint inertia
+    kukaLWR.getSegment(6).setJoint().setInertia(0.05);
+
+    std::cout << "kuka  lwr joint 7 inertia: " << kukaLWR.getSegment(6).getJoint().getInertia() << std::endl;
 }
 
 void SolverTest::tearDown()

@@ -223,6 +223,13 @@ namespace KDL {
         };
 
         /**
+         * Setters for the inertia of the joint.
+        */
+        void setInertia(const double& value)
+        {
+            inertia = value;
+        };
+        /**
          * Request the damping of the joint.
          *
          * @return const reference to the damping of the joint

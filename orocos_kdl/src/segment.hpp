@@ -120,6 +120,14 @@ namespace KDL {
             return joint;
         }
         /**
+         * Setter for the joint of the segment
+         * @return reference to the joint of the segment
+         */
+        Joint& setJoint()
+        {
+            return joint;
+        }
+        /**
          * Request the inertia of the segment
          *
          *
