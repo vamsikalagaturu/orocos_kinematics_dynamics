@@ -16,6 +16,7 @@ project(python_orocos_kdl VERSION 1.5.1)
 find_package(orocos_kdl ${PROJECT_VERSION} EXACT REQUIRED)
 include_directories(${orocos_kdl_INCLUDE_DIRS})
 link_directories(${orocos_kdl_LIBRARY_DIRS})
+include_directories(${pybind11_INCLUDE_DIR}/pybind11_catkin)
 
 if(DEFINED ENV{ROS_PYTHON_VERSION})
   SET(PYTHON_VERSION $ENV{ROS_PYTHON_VERSION} CACHE STRING "Python Version")
