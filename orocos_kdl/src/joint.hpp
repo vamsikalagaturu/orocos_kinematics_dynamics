@@ -225,7 +225,7 @@ namespace KDL {
         /**
          * Setters for the inertia of the joint.
         */
-        void setInertia(const double& value)
+        void setJointInertia(const double& value)
         {
             inertia = value;
         };
