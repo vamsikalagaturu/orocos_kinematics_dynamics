@@ -1,8 +1,8 @@
 #
 # Test CMake version
 #
-CMAKE_MINIMUM_REQUIRED(VERSION 3.0.2)
-
+CMAKE_MINIMUM_REQUIRED(VERSION 3.12)
+set(CMAKE_CXX_STANDARD 17)
 
 ###################################################
 #                                                 #
@@ -23,14 +23,7 @@ MESSAGE( STATUS "Orocos KDL version ${VERSION} (${KDL_VERSION_MAJOR}.${KDL_VERSI
 SET( PROJ_SOURCE_DIR ${orocos_kdl_SOURCE_DIR} )
 SET( PROJ_BINARY_DIR ${orocos_kdl_BINARY_DIR} )
 
-# catkin-specific configuration (optional)
-# find_package(catkin QUIET)
-# if(catkin_FOUND)
-#   catkin_package(
-#     SKIP_CMAKE_CONFIG_GENERATION
-#     SKIP_PKG_CONFIG_GENERATION
-#   )
-# endif()
+find_package(ament_cmake REQUIRED)
 
 IF(NOT CMAKE_INSTALL_PREFIX)
   SET( CMAKE_INSTALL_PREFIX /usr/local/ CACHE PATH "Installation directory" FORCE)
@@ -129,3 +122,10 @@ CONFIGURE_FILE(orocos_kdl.pc.in ${CMAKE_CURRENT_BINARY_DIR}/orocos_kdl.pc @ONLY)
 
 INSTALL(FILES ${CMAKE_CURRENT_BINARY_DIR}/orocos-kdl.pc DESTINATION lib${LIB_SUFFIX}/pkgconfig)
 INSTALL(FILES ${CMAKE_CURRENT_BINARY_DIR}/orocos_kdl.pc DESTINATION lib${LIB_SUFFIX}/pkgconfig)
+
+ament_export_dependencies()
+ament_export_include_directories(${INCLUDE_DIRS})
+ament_export_libraries(orocos-kdl)
+ament_export_targets(OrocosKDLTargets HAS_LIBRARY_TARGET)
+
+ament_package()
