@@ -21,8 +21,8 @@
 // License along with this library; if not, write to the Free Software
 // Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
-#ifndef KDL_CHAINHDSOLVER_VERESHCHAGIN_HPP
-#define KDL_CHAINHDSOLVER_VERESHCHAGIN_HPP
+#ifndef KDL_CHAINHDSOLVER_VERESHCHAGIN_FEXT_HPP
+#define KDL_CHAINHDSOLVER_VERESHCHAGIN_FEXT_HPP
 
 #include "chainidsolver.hpp"
 #include "frames.hpp"
@@ -363,7 +363,7 @@ namespace KDL
  * @ingroup KinematicFamily
  */
 
-class ChainHdSolver_Vereshchagin : KDL::SolverI
+class ChainHdSolver_Vereshchagin_Fext : KDL::SolverI
 {
     typedef std::vector<Twist> Twists;
     typedef std::vector<Frame> Frames;
@@ -379,9 +379,9 @@ public:
      * Note: This solver takes gravity acceleration with opposite sign comparead to the KDL's FD and RNE solvers
      * \param nc Number of constraints imposed on the robot's end-effector (maximum is 6).
      */
-    ChainHdSolver_Vereshchagin(const Chain& chain, const Twist &root_acc, const unsigned int nc);
+    ChainHdSolver_Vereshchagin_Fext(const Chain& chain, const Twist &root_acc, const unsigned int nc);
 
-    ~ChainHdSolver_Vereshchagin()
+    ~ChainHdSolver_Vereshchagin_Fext()
     {
     };
 
@@ -532,4 +532,4 @@ private:
 };
 }
 
-#endif // KDL_CHAINHDSOLVER_VERESHCHAGIN_HPP
+#endif // KDL_CHAINHDSOLVER_VERESHCHAGIN_FEXT_HPP
