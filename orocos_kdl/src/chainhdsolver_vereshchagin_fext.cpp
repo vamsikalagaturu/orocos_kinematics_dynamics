@@ -128,7 +128,7 @@ void ChainHdSolver_Vereshchagin_Fext::initial_upwards_sweep(const JntArray &q, c
         //wrench of the rigid body bias forces and the external forces on the segment (in body coordinates, tip)
         //external forces are taken into account through s.U.
         Wrench FextLocal = F_total.M.Inverse() * f_ext[i];
-        s.U = s.v * (s.H * s.v) - FextLocal; //f_ext[i];
+        s.U = - FextLocal; //f_ext[i];
         if (segment.getJoint().getType() != Joint::Fixed)
             j++;
     }
